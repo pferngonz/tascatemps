@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <button type="submit" onclick="iniciarjoc()" onclick="return false">Iniciar joc</button>
+<script>
+    function iniciarjoc(){
+        var sacabat=false;
+        var datainici=new Date();
+        var numerosalia=[];
+        for(var i=0;i<500000;i++){        
+            var numeroesco=Math.floor(Math.random()*500000);
+            numerosalia.push(numeroesco);
+        }
+        alert(numerosalia[0])
+        alert(datainici);
+        while(!sacabat){
+            var numero=prompt("digues un numero");
+            for(var i=0;i<numerosalia.length;i++){
+                if(numero==numerosalia[i]){
+                alert("felicitats has guanyat");
+                sacabat=true;
+                break;
+            }
+            }
+            if(!sacabat){
+                alert("el numero introduit no esta dins dels 500000 numeros")
+            }
+        }
+        var datafinal=new Date();
+        var diferencia=(datafinal-datainici)/1000;
+        alert(diferencia);
+    }
+</script>
+</body>
+</html>
