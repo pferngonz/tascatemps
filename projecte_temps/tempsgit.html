@@ -10,7 +10,7 @@
         var sacabat=false;
         var datainici=new Date();
         var numerosalia=[];
-        for(var i=0;i<500000;i++){        
+        for(var i=0;i<700000;i++){        
             var numeroesco=Math.floor(Math.random()*500000);
             numerosalia.push(numeroesco);
         }
@@ -19,11 +19,13 @@
         while(!sacabat){
             var numero=prompt("digues un numero");
             for(var i=0;i<numerosalia.length;i++){
+	     if(i%2==0){
                 if(numero==numerosalia[i]){
                 alert("felicitats has guanyat");
                 sacabat=true;
                 break;
             }
+		}
             }
             if(!sacabat){
                 alert("el numero introduit no esta dins dels 500000 numeros")
